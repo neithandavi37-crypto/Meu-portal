@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Portal de Jogos</title>
     <style>
-        /* Configurações gerais do visual */
         body {
             background-color: #1a1a2e;
             color: white;
@@ -17,8 +16,6 @@
             text-align: center;
             color: #e94560;
         }
-        
-        /* A grade onde os jogos ficam */
         .grade-jogos {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -26,8 +23,6 @@
             max-width: 800px;
             margin: 0 auto;
         }
-
-        /* O cartão de cada jogo */
         .cartao-jogo {
             background-color: #16213e;
             border-radius: 10px;
@@ -35,27 +30,26 @@
             text-align: center;
             transition: transform 0.2s;
             border: 2px solid transparent;
+            text-decoration: none;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 160px; /* Deixa todos os quadrados do mesmo tamanho */
         }
-
         .cartao-jogo:hover {
             transform: scale(1.05);
             border: 2px solid #e94560;
         }
-
-        .cartao-jogo img {
-            width: 100%;
-            height: 120px;
-            object-fit: cover;
+        /* Transformei as imagens em emojis gigantes para não quebrar */
+        .icone-jogo {
+            font-size: 60px;
+            margin-bottom: 10px;
         }
-
         .cartao-jogo h3 {
-            margin: 10px 0;
-            font-size: 16px;
-        }
-
-        .cartao-jogo a {
-            text-decoration: none;
-            color: white;
+            margin: 0;
+            font-size: 18px;
         }
     </style>
 </head>
@@ -65,37 +59,29 @@
     
     <div class="grade-jogos">
         
-        <!-- Jogo 1 -->
-        <div class="cartao-jogo">
-            <a href="https://play2048.co/" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/2048_logo.svg" alt="2048">
-                <h3>2048</h3>
-            </a>
-        </div>
+        <!-- Jogo 1 (Funciona no celular) -->
+        <a href="https://play2048.co/" target="_blank" class="cartao-jogo">
+            <div class="icone-jogo">🔢</div>
+            <h3>2048</h3>
+        </a>
 
-        <!-- Jogo 2 -->
-        <div class="cartao-jogo">
-            <a href="https://hextris.io/" target="_blank">
-                <img src="https://hextris.io/images/hextris-logo.png" alt="Hextris" style="background-color: white;">
-                <h3>Hextris</h3>
-            </a>
-        </div>
+        <!-- Jogo 2 (Trocado por Pac-Man que funciona no celular) -->
+        <a href="https://www.google.com/logos/2010/pacman10-i.html" target="_blank" class="cartao-jogo">
+            <div class="icone-jogo">🟡</div>
+            <h3>Pac-Man</h3>
+        </a>
 
-        <!-- Jogo 3 -->
-        <div class="cartao-jogo">
-            <a href="https://clarkduvall.com/snake/" target="_blank">
-                <div style="font-size: 50px; padding-top: 20px;">🐍</div>
-                <h3>Snake</h3>
-            </a>
-        </div>
+        <!-- Jogo 3 (Snake que funciona no celular com swipe) -->
+        <a href="https://playsnake.org/" target="_blank" class="cartao-jogo">
+            <div class="icone-jogo">🐍</div>
+            <h3>Snake</h3>
+        </a>
 
-        <!-- Jogo 4 -->
-        <div class="cartao-jogo">
-            <a href="https://trex-runner.com/" target="_blank">
-                <div style="font-size: 50px; padding-top: 20px;">🦖</div>
-                <h3>T-Rex Run</h3>
-            </a>
-        </div>
+        <!-- Jogo 4 (T-Rex do Chrome) -->
+        <a href="https://trex-runner.com/" target="_blank" class="cartao-jogo">
+            <div class="icone-jogo">🦖</div>
+            <h3>T-Rex Run</h3>
+        </a>
 
     </div>
 
