@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nyan Jogos</title>
+    <!-- AQUI MUDA O NOME DA ABA DO CHROME -->
+    <title>Nyan cat</title>
     <style>
         body {
-            /* O fundo do Nyan Cat */
-            background-image: url('fundo.jpg'); 
+            /* Fundo do Nyan Cat direto da internet */
+            background-image: url('https://wallpapercave.com/wp/wp1893836.jpg'); 
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -22,13 +23,12 @@
             text-align: center;
             color: #e94560;
             background-color: rgba(26, 26, 46, 0.85);
-            display: inline-block;
             padding: 10px 20px;
             border-radius: 10px;
-            margin-left: 50%;
-            transform: translateX(-50%);
             border: 2px solid #e94560;
             text-shadow: 2px 2px 4px #000;
+            margin: 0 auto 20px auto;
+            width: fit-content;
         }
         .grade-jogos {
             display: grid;
@@ -36,7 +36,6 @@
             gap: 15px;
             max-width: 800px;
             margin: 0 auto;
-            /* Caixa escura semitransparente para os jogos aparecerem bem */
             background-color: rgba(26, 26, 46, 0.85);
             padding: 15px;
             border-radius: 15px;
@@ -78,17 +77,16 @@
 </head>
 <body>
 
-    <h1>🌈 Nyan Jogos 🌈</h1>
+    <!-- Título que aparece no site -->
+    <h1>🌈 Nyan cat 🌈</h1>
     
     <div class="grade-jogos">
         
-        <!-- A TV DE VÍDEOS -->
         <a href="YouTube.html" class="cartao-jogo cartao-tv">
             <div class="icone-jogo">📺</div>
             <h3>Vídeos / TikTok</h3>
         </a>
 
-        <!-- OS JOGOS NOVOS E FUNCIONAIS -->
         <a href="https://scratch.mit.edu/projects/10128407/" target="_blank" class="cartao-jogo"><div class="icone-jogo">⛏️</div><h3>Paper Minecraft</h3></a>
         <a href="https://slither.io/" target="_blank" class="cartao-jogo"><div class="icone-jogo">🐛</div><h3>Slither.io</h3></a>
         <a href="https://shellshock.io/" target="_blank" class="cartao-jogo"><div class="icone-jogo">🥚</div><h3>Shell Shockers</h3></a>
@@ -108,7 +106,6 @@
         <a href="https://poki.com/en/g/smash-karts" target="_blank" class="cartao-jogo"><div class="icone-jogo">🚙</div><h3>Smash Karts</h3></a>
         <a href="https://littlealchemy2.com/" target="_blank" class="cartao-jogo"><div class="icone-jogo">🧪</div><h3>Little Alchemy 2</h3></a>
 
-        <!-- Jogos anteriores (Funcionando) -->
         <a href="https://play2048.co/" target="_blank" class="cartao-jogo"><div class="icone-jogo">🔢</div><h3>2048</h3></a>
         <a href="https://www.google.com/logos/2010/pacman10-i.html" target="_blank" class="cartao-jogo"><div class="icone-jogo">🟡</div><h3>Pac-Man</h3></a>
         <a href="https://playsnake.org/" target="_blank" class="cartao-jogo"><div class="icone-jogo">🐍</div><h3>Snake</h3></a>
