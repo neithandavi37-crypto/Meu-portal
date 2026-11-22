@@ -3,10 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Portal de Jogos</title>
+    <title>Nyan Jogos</title>
     <style>
         body {
+            /* O fundo do Nyan Cat */
+            background-image: url('fundo.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             background-color: #1a1a2e;
+            
             color: white;
             font-family: Arial, sans-serif;
             margin: 0;
@@ -15,6 +21,14 @@
         h1 {
             text-align: center;
             color: #e94560;
+            background-color: rgba(26, 26, 46, 0.85);
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 10px;
+            margin-left: 50%;
+            transform: translateX(-50%);
+            border: 2px solid #e94560;
+            text-shadow: 2px 2px 4px #000;
         }
         .grade-jogos {
             display: grid;
@@ -22,6 +36,11 @@
             gap: 15px;
             max-width: 800px;
             margin: 0 auto;
+            /* Caixa escura semitransparente para os jogos aparecerem bem */
+            background-color: rgba(26, 26, 46, 0.85);
+            padding: 15px;
+            border-radius: 15px;
+            border: 2px solid #16213e;
         }
         .cartao-jogo {
             background-color: #16213e;
@@ -59,7 +78,7 @@
 </head>
 <body>
 
-    <h1>🎮 Meu Portal de Jogos 🎮</h1>
+    <h1>🌈 Nyan Jogos 🌈</h1>
     
     <div class="grade-jogos">
         
@@ -151,5 +170,4 @@
     </div>
 
 </body>
-            </html>
-            
+</html>
