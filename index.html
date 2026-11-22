@@ -6,156 +6,84 @@
     <title>Nyan jogos</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        html { scroll-behavior: smooth; }
         body {
             background-image: url('https://media.giphy.com/media/sIIhZliB2McAo/giphy.gif'); 
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            background-color: #0b0c10;
-            color: white;
-            font-family: 'Poppins', Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
+            background-size: cover; background-position: center; background-attachment: fixed; background-color: #0b0c10;
+            color: white; font-family: 'Poppins', Arial, sans-serif; margin: 0; padding: 20px;
         }
-
-        /* Deixa o fundo escuro para os jogos aparecerem melhor */
-        .overlay {
-            background-color: rgba(11, 12, 16, 0.85);
-            min-height: 100vh;
-            padding: 20px;
-            border-radius: 15px;
-        }
-
-        h1 {
-            text-align: center;
-            color: #ff007f;
-            text-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f;
-            margin-bottom: 20px;
-            font-size: 32px;
-        }
-
-        /* --- BARRA DE PESQUISA --- */
+        .overlay { background-color: rgba(11, 12, 16, 0.85); min-height: 100vh; padding: 20px; border-radius: 15px; position: relative; }
+        h1 { text-align: center; color: #ff007f; text-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f; margin-bottom: 20px; font-size: 32px; }
         .barra-pesquisa {
-            display: block;
-            width: 90%;
-            max-width: 500px;
-            margin: 0 auto 20px auto;
-            padding: 15px;
-            font-size: 16px;
-            border-radius: 30px;
-            border: 2px solid #ff007f;
-            background-color: #1a1a2e;
-            color: white;
-            text-align: center;
-            outline: none;
-            box-shadow: 0 0 10px rgba(255, 0, 127, 0.3);
-            font-family: 'Poppins', Arial, sans-serif;
+            display: block; width: 90%; max-width: 500px; margin: 0 auto 20px auto; padding: 15px; font-size: 16px;
+            border-radius: 30px; border: 2px solid #ff007f; background-color: #1a1a2e; color: white;
+            text-align: center; outline: none; box-shadow: 0 0 10px rgba(255, 0, 127, 0.3); font-family: 'Poppins', Arial, sans-serif;
         }
-
-        /* --- BOTÕES DE CATEGORIA --- */
-        .categorias {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 30px;
-        }
-
+        .categorias { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 30px; }
         .btn-categoria {
-            background-color: #1a1a2e;
-            color: white;
-            border: 2px solid #16213e;
-            padding: 10px 20px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-weight: bold;
-            font-family: 'Poppins', Arial, sans-serif;
-            transition: 0.3s;
+            background-color: #1a1a2e; color: white; border: 2px solid #16213e; padding: 8px 15px;
+            border-radius: 20px; cursor: pointer; font-weight: bold; font-family: 'Poppins', Arial, sans-serif; transition: 0.3s;
         }
-
-        .btn-categoria:hover, .btn-categoria.ativo {
-            background-color: #ff007f;
-            border-color: #ff007f;
-            box-shadow: 0 0 15px #ff007f;
-        }
-
-        /* --- GRADE DE JOGOS --- */
-        .grade-jogos {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 15px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
+        .btn-categoria:hover, .btn-categoria.ativo { background-color: #ff007f; border-color: #ff007f; box-shadow: 0 0 15px #ff007f; }
+        .grade-jogos { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 15px; max-width: 1000px; margin: 0 auto; }
         .cartao-jogo {
-            background: rgba(26, 26, 46, 0.7);
-            backdrop-filter: blur(5px);
-            border-radius: 15px;
-            overflow: hidden;
-            text-align: center;
-            transition: transform 0.2s, box-shadow 0.2s;
-            border: 2px solid #16213e;
-            text-decoration: none;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 160px;
+            background: rgba(26, 26, 46, 0.7); backdrop-filter: blur(5px); border-radius: 15px; overflow: hidden;
+            text-align: center; transition: transform 0.2s, box-shadow 0.2s; border: 2px solid #16213e;
+            text-decoration: none; color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 150px;
         }
-
-        .cartao-jogo:hover {
-            transform: translateY(-5px) scale(1.05);
-            border-color: #00d2ff;
-            box-shadow: 0 0 20px rgba(0, 210, 255, 0.6);
-        }
-
-        .cartao-tv {
-            border-color: #ff007f;
-            background: rgba(255, 0, 127, 0.1);
-        }
-
-        .icone-jogo {
-            font-size: 50px;
-            margin-bottom: 10px;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-        }
-
-        .cartao-jogo h3 {
-            margin: 0;
-            font-size: 15px;
-            padding: 0 5px;
-            font-weight: 700;
+        .cartao-jogo:hover { transform: translateY(-5px) scale(1.05); border-color: #00d2ff; box-shadow: 0 0 20px rgba(0, 210, 255, 0.6); }
+        .cartao-tv { border-color: #ff007f; background: rgba(255, 0, 127, 0.1); }
+        .icone-jogo { font-size: 50px; margin-bottom: 10px; text-shadow: 0 0 10px rgba(255, 255, 255, 0.3); }
+        .cartao-jogo h3 { margin: 0; font-size: 14px; padding: 0 5px; font-weight: 700; }
+        
+        /* BOTÃO VOLTAR AO TOPO */
+        #btnTopo {
+            display: none; position: fixed; bottom: 20px; right: 20px; z-index: 99;
+            background-color: #ff007f; color: white; border: none; padding: 15px; border-radius: 50%;
+            font-size: 20px; cursor: pointer; box-shadow: 0 0 15px #ff007f; font-weight: bold;
         }
     </style>
 </head>
 <body>
 
-    <div class="overlay">
+    <div class="overlay" id="topo">
         <h1>🌈 Nyan Jogos 🌈</h1>
         
         <input type="text" id="pesquisa" class="barra-pesquisa" onkeyup="filtrar()" placeholder="🔍 Pesquisar jogo...">
 
-        <!-- MENU DE CATEGORIAS -->
         <div class="categorias">
             <button class="btn-categoria ativo" onclick="mudarCategoria('todos', this)">Todos</button>
-            <button class="btn-categoria" onclick="mudarCategoria('acao', this)">Ação & Tiro</button>
+            <button class="btn-categoria" onclick="mudarCategoria('acao', this)">Ação</button>
             <button class="btn-categoria" onclick="mudarCategoria('puzzle', this)">Puzzle</button>
             <button class="btn-categoria" onclick="mudarCategoria('multiplayer', this)">Multiplayer</button>
             <button class="btn-categoria" onclick="mudarCategoria('classicos', this)">Clássicos</button>
+            <button class="btn-categoria" onclick="mudarCategoria('terror', this)">Terror</button>
+            <button class="btn-categoria" onclick="mudarCategoria('corrida', this)">Corrida</button>
+            <button class="btn-categoria" onclick="mudarCategoria('esporte', this)">Esporte</button>
         </div>
 
         <div class="grade-jogos" id="gradeJogos">
             
-            <a href="YouTube.html" class="cartao-jogo cartao-tv" data-categoria="todos">
-                <div class="icone-jogo">📺</div>
-                <h3>Vídeos / TikTok</h3>
-            </a>
+            <a href="YouTube.html" class="cartao-jogo cartao-tv" data-categoria="todos"><div class="icone-jogo">📺</div><h3>Vídeos / TikTok</h3></a>
 
-            <!-- LOTE 4: OS NOVOS JOGOS -->
+            <!-- LOTE 5: OS NOVOS JOGOS (Terror, Corrida, Esporte) -->
+            <a href="https://poki.com/en/g/five-nights-at-freddys" target="_blank" class="cartao-jogo" data-categoria="terror"><div class="icone-jogo">🐻</div><h3>FNAF</h3></a>
+            <a href="https://poki.com/en/g/backrooms" target="_blank" class="cartao-jogo" data-categoria="terror"><div class="icone-jogo">🚪</div><h3>Backrooms</h3></a>
+            <a href="https://poki.com/en/g/slender" target="_blank" class="cartao-jogo" data-categoria="terror"><div class="icone-jogo">👤</div><h3>Slender</h3></a>
+            <a href="https://poki.com/en/g/granny" target="_blank" class="cartao-jogo" data-categoria="terror"><div class="icone-jogo">👵</div><h3>Granny</h3></a>
+            <a href="https://poki.com/en/g/evil-nun" target="_blank" class="cartao-jogo" data-categoria="terror"><div class="icone-jogo">👻</div><h3>Evil Nun</h3></a>
+            <a href="https://poki.com/en/g/madalin-stunt-cars-3" target="_blank" class="cartao-jogo" data-categoria="corrida"><div class="icone-jogo">🏎️</div><h3>Madalin Cars 3</h3></a>
+            <a href="https://poki.com/en/g/drift-boss" target="_blank" class="cartao-jogo" data-categoria="corrida"><div class="icone-jogo">🚙</div><h3>Drift Boss</h3></a>
+            <a href="https://poki.com/en/g/moto-x3m-winter" target="_blank" class="cartao-jogo" data-categoria="corrida"><div class="icone-jogo">❄️</div><h3>Moto X3M Winter</h3></a>
+            <a href="https://poki.com/en/g/rally-point" target="_blank" class="cartao-jogo" data-categoria="corrida"><div class="icone-jogo">🚗</div><h3>Rally Point</h3></a>
+            <a href="https://poki.com/en/g/soccer-random" target="_blank" class="cartao-jogo" data-categoria="esporte"><div class="icone-jogo">⚽</div><h3>Soccer Random</h3></a>
+            <a href="https://poki.com/en/g/basketball-frvr" target="_blank" class="cartao-jogo" data-categoria="esporte"><div class="icone-jogo">🏀</div><h3>Basketball FRVR</h3></a>
+            <a href="https://poki.com/en/g/table-tennis-world-tour" target="_blank" class="cartao-jogo" data-categoria="esporte"><div class="icone-jogo">🏓</div><h3>Table Tennis</h3></a>
+            <a href="https://poki.com/en/g/penalty-kick" target="_blank" class="cartao-jogo" data-categoria="esporte"><div class="icone-jogo">🥅</div><h3>Penalty Kick</h3></a>
+            
+            <!-- JOGOS ANTERIORES -->
             <a href="https://1v1.lol/" target="_blank" class="cartao-jogo" data-categoria="acao"><div class="icone-jogo">🏗️</div><h3>1v1.LOL</h3></a>
-            <a href="https://krunker.io/" target="_blank" class="cartao-jogo" data-categoria="acao"><div class="icone-jogo">🔫</div><h3>Krunker</h3></a>
+            <a href="https://krunker.io/" target="_blank" class="cartao-jogo" data-categoria="multiplayer"><div class="icone-jogo">🔫</div><h3>Krunker</h3></a>
             <a href="https://poki.com/en/g/monkey-mart" target="_blank" class="cartao-jogo" data-categoria="puzzle"><div class="icone-jogo">🐒</div><h3>Monkey Mart</h3></a>
             <a href="https://poki.com/en/g/tiny-fishing" target="_blank" class="cartao-jogo" data-categoria="classicos"><div class="icone-jogo">🎣</div><h3>Tiny Fishing</h3></a>
             <a href="https://poki.com/en/g/escape-road" target="_blank" class="cartao-jogo" data-categoria="acao"><div class="icone-jogo">🚓</div><h3>Escape Road</h3></a>
@@ -169,10 +97,7 @@
             <a href="https://poki.com/en/g/shell-shockers" target="_blank" class="cartao-jogo" data-categoria="multiplayer"><div class="icone-jogo">🥚</div><h3>Shell Shockers</h3></a>
             <a href="https://poki.com/en/g/bloxd-io" target="_blank" class="cartao-jogo" data-categoria="multiplayer"><div class="icone-jogo">🧊</div><h3>Bloxd.io</h3></a>
             <a href="https://poki.com/en/g/smash-karts" target="_blank" class="cartao-jogo" data-categoria="multiplayer"><div class="icone-jogo">🏎️</div><h3>Smash Karts</h3></a>
-
-            <!-- JOGOS ANTIGOS (Classificados) -->
             <a href="https://poki.com/en/g/friday-night-funkin" target="_blank" class="cartao-jogo" data-categoria="classicos"><div class="icone-jogo">🎤</div><h3>FNF</h3></a>
-            <a href="https://poki.com/en/g/granny" target="_blank" class="cartao-jogo" data-categoria="acao"><div class="icone-jogo">👵</div><h3>Granny</h3></a>
             <a href="https://poki.com/en/g/among-us" target="_blank" class="cartao-jogo" data-categoria="multiplayer"><div class="icone-jogo">🚀</div><h3>Among Us</h3></a>
             <a href="https://play2048.co/" target="_blank" class="cartao-jogo" data-categoria="puzzle"><div class="icone-jogo">🔢</div><h3>2048</h3></a>
             <a href="https://www.google.com/logos/2010/pacman10-i.html" target="_blank" class="cartao-jogo" data-categoria="classicos"><div class="icone-jogo">🟡</div><h3>Pac-Man</h3></a>
@@ -187,25 +112,20 @@
         </div>
     </div>
 
+    <!-- BOTÃO VOLTAR AO TOPO -->
+    <button id="btnTopo" onclick="window.scrollTo(0, 0)">⬆️</button>
+
     <script>
         let categoriaAtual = 'todos';
 
-        // Função para mudar a categoria
         function mudarCategoria(cat, botao) {
             categoriaAtual = cat;
-            
-            // Tira o "ativo" de todos os botões
             let botoes = document.getElementsByClassName('btn-categoria');
-            for(let i = 0; i < botoes.length; i++){
-                botoes[i].classList.remove('ativo');
-            }
-            // Coloca o "ativo" no botão clicado
+            for(let i = 0; i < botoes.length; i++){ botoes[i].classList.remove('ativo'); }
             botao.classList.add('ativo');
-
-            filtrar(); // Chama a filtragem
+            filtrar();
         }
 
-        // Função que filtra por texto E por categoria ao mesmo tempo
         function filtrar() {
             let input = document.getElementById('pesquisa').value.toLowerCase();
             let cartoes = document.getElementsByClassName('cartao-jogo');
@@ -213,22 +133,24 @@
             for (let i = 0; i < cartoes.length; i++) {
                 let titulo = cartoes[i].getElementsByTagName('h3')[0].innerText.toLowerCase();
                 let catJogo = cartoes[i].getAttribute('data-categoria');
-
-                // Se o botão for "todos" ou a categoria bater com a do jogo
                 let catBate = (categoriaAtual === 'todos') || (catJogo === categoriaAtual);
-                
-                // Se o texto digitado estiver no título
                 let textoBate = titulo.includes(input);
 
-                if (catBate && textoBate) {
-                    cartoes[i].style.display = ""; // Mostra
-                } else {
-                    cartoes[i].style.display = "none"; // Esconde
-                }
+                if (catBate && textoBate) { cartoes[i].style.display = ""; } 
+                else { cartoes[i].style.display = "none"; }
             }
         }
+
+        // Lógica do botão de voltar ao topo
+        window.onscroll = function() {
+            let btn = document.getElementById("btnTopo");
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                btn.style.display = "block";
+            } else {
+                btn.style.display = "none";
+            }
+        };
     </script>
 </body>
-</html>
-
-            
+    </html>
+    
