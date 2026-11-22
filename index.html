@@ -12,7 +12,6 @@
             background-attachment: fixed;
             background-color: #1a1a2e;
             background-repeat: no-repeat;
-            
             color: white;
             font-family: Arial, sans-serif;
             margin: 0;
@@ -28,6 +27,21 @@
             text-shadow: 2px 2px 4px #000;
             margin: 0 auto 20px auto;
             width: fit-content;
+        }
+        /* ESTILO DA BARRA DE PESQUISA */
+        .barra-pesquisa {
+            display: block;
+            width: 80%;
+            max-width: 500px;
+            margin: 0 auto 20px auto;
+            padding: 15px;
+            font-size: 18px;
+            border-radius: 25px;
+            border: 2px solid #e94560;
+            background-color: #16213e;
+            color: white;
+            text-align: center;
+            outline: none;
         }
         .grade-jogos {
             display: grid;
@@ -78,15 +92,49 @@
 
     <h1>🌈 Nyan jogos 🌈</h1>
     
-    <div class="grade-jogos">
+    <!-- A BARRA DE PESQUISA -->
+    <input type="text" id="pesquisa" class="barra-pesquisa" onkeyup="filtrarJogos()" placeholder="🔍 Pesquisar jogo...">
+
+    <div class="grade-jogos" id="gradeJogos">
         
-        <!-- A TV DE VÍDEOS -->
         <a href="YouTube.html" class="cartao-jogo cartao-tv">
             <div class="icone-jogo">📺</div>
             <h3>Vídeos / TikTok</h3>
         </a>
 
-        <!-- OS 24 JOGOS NOVOS (Rumo aos 100!) -->
+        <!-- LOTE 3 (Mais 30 jogos para chegar perto dos 150!) -->
+        <a href="https://poki.com/en/g/house-of-hazards" target="_blank" class="cartao-jogo"><div class="icone-jogo">💀</div><h3>House of Hazards</h3></a>
+        <a href="https://poki.com/en/g/we-become-what-we-behold" target="_blank" class="cartao-jogo"><div class="icone-jogo">👾</div><h3>We Become...</h3></a>
+        <a href="https://poki.com/en/g/drunken-duel" target="_blank" class="cartao-jogo"><div class="icone-jogo">🍺</div><h3>Drunken Duel</h3></a>
+        <a href="https://poki.com/en/g/12-mini-battles" target="_blank" class="cartao-jogo"><div class="icone-jogo">⚔️</div><h3>12 Mini Battles</h3></a>
+        <a href="https://poki.com/en/g/rooftop-snipers" target="_blank" class="cartao-jogo"><div class="icone-jogo">🎯</div><h3>Rooftop Snipers</h3></a>
+        <a href="https://poki.com/en/g/gun-mayhem" target="_blank" class="cartao-jogo"><div class="icone-jogo">🔫</div><h3>Gun Mayhem</h3></a>
+        <a href="https://poki.com/en/g/territory-war" target="_blank" class="cartao-jogo"><div class="icone-jogo">🗺️</div><h3>Territory War</h3></a>
+        <a href="https://poki.com/en/g/state-io" target="_blank" class="cartao-jogo"><div class="icone-jogo">🏳️</div><h3>State.io</h3></a>
+        <a href="https://poki.com/en/g/paper-io-2" target="_blank" class="cartao-jogo"><div class="icone-jogo">📜</div><h3>Paper.io 2</h3></a>
+        <a href="https://poki.com/en/g/worms-zone" target="_blank" class="cartao-jogo"><div class="icone-jogo">🪱</div><h3>Worms Zone</h3></a>
+        <a href="https://poki.com/en/g/zombs-io" target="_blank" class="cartao-jogo"><div class="icone-jogo">🧟</div><h3>Zombs.io</h3></a>
+        <a href="https://poki.com/en/g/moomoo-io" target="_blank" class="cartao-jogo"><div class="icone-jogo">🐄</div><h3>MooMoo.io</h3></a>
+        <a href="https://poki.com/en/g/diep-io" target="_blank" class="cartao-jogo"><div class="icone-jogo">🔵</div><h3>Diep.io</h3></a>
+        <a href="https://poki.com/en/g/shell-shockers" target="_blank" class="cartao-jogo"><div class="icone-jogo">🥚</div><h3>Shell Shockers</h3></a>
+        <a href="https://poki.com/en/g/surviv-io" target="_blank" class="cartao-jogo"><div class="icone-jogo">🪖</div><h3>Surviv.io</h3></a>
+        <a href="https://poki.com/en/g/buildnow-gg" target="_blank" class="cartao-jogo"><div class="icone-jogo">🏗️</div><h3>BuildNow.gg</h3></a>
+        <a href="https://poki.com/en/g/sandboxels" target="_blank" class="cartao-jogo"><div class="icone-jogo">🧪</div><h3>Sandboxels</h3></a>
+        <a href="https://poki.com/en/g/smash-karts" target="_blank" class="cartao-jogo"><div class="icone-jogo">🏎️</div><h3>Smash Karts</h3></a>
+        <a href="https://poki.com/en/g/rocket-bot-royale" target="_blank" class="cartao-jogo"><div class="icone-jogo">🤖</div><h3>Rocket Bot</h3></a>
+        <a href="https://poki.com/en/g/tank-stars" target="_blank" class="cartao-jogo"><div class="icone-jogo">🚜</div><h3>Tank Stars</h3></a>
+        <a href="https://poki.com/en/g/hole-io" target="_blank" class="cartao-jogo"><div class="icone-jogo">🕳️</div><h3>Hole.io</h3></a>
+        <a href="https://poki.com/en/g/blumgi-rocket" target="_blank" class="cartao-jogo"><div class="icone-jogo">🚀</div><h3>Blumgi Rocket</h3></a>
+        <a href="https://poki.com/en/g/stealing-the-diamond" target="_blank" class="cartao-jogo"><div class="icone-jogo">💎</div><h3>Stealing Diamond</h3></a>
+        <a href="https://poki.com/en/g/archery-world-tour" target="_blank" class="cartao-jogo"><div class="icone-jogo">🏹</div><h3>Archery World</h3></a>
+        <a href="https://poki.com/en/g/golf-orbits" target="_blank" class="cartao-jogo"><div class="icone-jogo">⛳</div><h3>Golf Orbits</h3></a>
+        <a href="https://poki.com/en/g/mini-golf-club" target="_blank" class="cartao-jogo"><div class="icone-jogo">🏌️</div><h3>Mini Golf Club</h3></a>
+        <a href="https://poki.com/en/g/8-ball-pool" target="_blank" class="cartao-jogo"><div class="icone-jogo">🎱</div><h3>8 Ball Pool</h3></a>
+        <a href="https://poki.com/en/g/penalty-shooters" target="_blank" class="cartao-jogo"><div class="icone-jogo">🥅</div><h3>Penalty Shooters</h3></a>
+        <a href="https://poki.com/en/g/soccer-skills" target="_blank" class="cartao-jogo"><div class="icone-jogo">⚽</div><h3>Soccer Skills</h3></a>
+        <a href="https://poki.com/en/g/table-tennis-world-tour" target="_blank" class="cartao-jogo"><div class="icone-jogo">🏓</div><h3>Table Tennis</h3></a>
+
+        <!-- LOTE 2 (Jogos anteriores) -->
         <a href="https://poki.com/en/g/friday-night-funkin" target="_blank" class="cartao-jogo"><div class="icone-jogo">🎤</div><h3>FNF</h3></a>
         <a href="https://poki.com/en/g/granny" target="_blank" class="cartao-jogo"><div class="icone-jogo">👵</div><h3>Granny</h3></a>
         <a href="https://poki.com/en/g/fall-guys" target="_blank" class="cartao-jogo"><div class="icone-jogo">🥔</div><h3>Fall Guys</h3></a>
@@ -108,11 +156,11 @@
         <a href="https://poki.com/en/g/bitlife" target="_blank" class="cartao-jogo"><div class="icone-jogo">📱</div><h3>BitLife</h3></a>
         <a href="https://poki.com/en/g/basketball-legends" target="_blank" class="cartao-jogo"><div class="icone-jogo">🏀</div><h3>Basketball Legends</h3></a>
         <a href="https://poki.com/en/g/football-legends" target="_blank" class="cartao-jogo"><div class="icone-jogo">⚽</div><h3>Football Legends</h3></a>
-        <a href="https://poki.com/en/g/madalin-stunt-cars-2" target="_blank" class="cartao-jogo"><div class="icone-jogo">🏎️</div><h3>Madalin Stunt Cars</h3></a>
+        <a href="https://poki.com/en/g/madalin-stunt-cars-2" target="_blank" class="cartao-jogo"><div class="icone-jogo">🏎️</div><h3>Madalin Cars</h3></a>
         <a href="https://poki.com/en/g/moto-x3m-2" target="_blank" class="cartao-jogo"><div class="icone-jogo">🏍️</div><h3>Moto X3M 2</h3></a>
         <a href="https://www.google.com/logos/2020/doodle-champion-island-en.html" target="_blank" class="cartao-jogo"><div class="icone-jogo">🏆</div><h3>Champion Island</h3></a>
 
-        <!-- OS JOGOS ANTERIORES (Para chegar aos 100!) -->
+        <!-- LOTE 1 (Jogos originais) -->
         <a href="https://scratch.mit.edu/projects/10128407/" target="_blank" class="cartao-jogo"><div class="icone-jogo">⛏️</div><h3>Paper Minecraft</h3></a>
         <a href="https://slither.io/" target="_blank" class="cartao-jogo"><div class="icone-jogo">🐛</div><h3>Slither.io</h3></a>
         <a href="https://shellshock.io/" target="_blank" class="cartao-jogo"><div class="icone-jogo">🥚</div><h3>Shell Shockers</h3></a>
@@ -174,23 +222,5 @@
         <a href="https://poki.com/en/g/block-blast" target="_blank" class="cartao-jogo"><div class="icone-jogo">🧱</div><h3>Block Blast</h3></a>
         <a href="https://poki.com/en/g/geometry-dash" target="_blank" class="cartao-jogo"><div class="icone-jogo">🔺</div><h3>Geometry Dash</h3></a>
         <a href="https://poki.com/en/g/subway-surfers" target="_blank" class="cartao-jogo"><div class="icone-jogo">🛹</div><h3>Subway Surfers</h3></a>
-        <a href="https://poki.com/en/g/temple-run-2" target="_blank" class="cartao-jogo"><div class="icone-jogo">🏃‍♂️</div><h3>Temple Run</h3></a>
-        <a href="https://poki.com/en/g/angry-birds" target="_blank" class="cartao-jogo"><div class="icone-jogo">🐦</div><h3>Angry Birds</h3></a>
-        <a href="https://www.crazygames.com/game/plants-vs-zombies" target="_blank" class="cartao-jogo"><div class="icone-jogo">🌻</div><h3>Plants vs Zombies</h3></a>
-        <a href="https://poki.com/en/g/fruit-ninja" target="_blank" class="cartao-jogo"><div class="icone-jogo">🍉</div><h3>Fruit Ninja</h3></a>
-        <a href="https://poki.com/en/g/crossy-road" target="_blank" class="cartao-jogo"><div class="icone-jogo">🐔</div><h3>Crossy Road</h3></a>
-        <a href="https://plays.org/hill-climb-racing/" target="_blank" class="cartao-jogo"><div class="icone-jogo">🚗</div><h3>Hill Climb</h3></a>
-        <a href="https://plays.org/zuma/" target="_blank" class="cartao-jogo"><div class="icone-jogo">🔮</div><h3>Zuma</h3></a>
-        <a href="https://www.coolmathgames.com/0-duck-life" target="_blank" class="cartao-jogo"><div class="icone-jogo">🦆</div><h3>Duck Life</h3></a>
-        <a href="https://www.coolmathgames.com/0-papas-pizzeria" target="_blank" class="cartao-jogo"><div class="icone-jogo">🍕</div><h3>Papa's Pizzeria</h3></a>
-        <a href="https://plays.org/bad-piggies/" target="_blank" class="cartao-jogo"><div class="icone-jogo">🐷</div><h3>Bad Piggies</h3></a>
-        <a href="https://supermarioemulator.com/" target="_blank" class="cartao-jogo"><div class="icone-jogo">🍄</div><h3>Super Mario</h3></a>
-        <a href="https://www.playemulator.com/gba/play-pokemon-fire-red/" target="_blank" class="cartao-jogo"><div class="icone-jogo">🧢</div><h3>Pokémon</h3></a>
-        <a href="https://www.crazygames.com/game/fireboy-and-watergirl-forest-temple" target="_blank" class="cartao-jogo"><div class="icone-jogo">🔥💧</div><h3>Fireboy & Watergirl</h3></a>
-        <a href="https://www.crazygames.com/game/8-ball-billiards-classic" target="_blank" class="cartao-jogo"><div class="icone-jogo">🎱</div><h3>Sinuca</h3></a>
-
-    </div>
-
-</body>
-            </html>
+        <a href="https://poki.com/en/g/temple-run-2" target="_blank
             
