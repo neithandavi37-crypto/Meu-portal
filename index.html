@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- AQUI MUDA O NOME DA ABA DO CHROME -->
     <title>Nyan cat</title>
     <style>
         body {
-            /* Fundo do Nyan Cat direto da internet */
-            background-image: url('https://wallpapercave.com/wp/wp1893836.jpg'); 
+            /* Fundo com o GIF animado do Nyan Cat */
+            background-image: url('https://media.tenor.com/2uyENRmiUt0AAAAC/nyan-cat.gif'); 
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            background-color: #1a1a2e;
+            background-color: #1a1a2e; /* Cor de fundo caso o gif demore a carregar */
+            background-repeat: no-repeat;
             
             color: white;
             font-family: Arial, sans-serif;
@@ -36,6 +36,7 @@
             gap: 15px;
             max-width: 800px;
             margin: 0 auto;
+            /* Caixa escura semitransparente para os jogos aparecerem bem em cima do GIF */
             background-color: rgba(26, 26, 46, 0.85);
             padding: 15px;
             border-radius: 15px;
@@ -77,16 +78,17 @@
 </head>
 <body>
 
-    <!-- Título que aparece no site -->
     <h1>🌈 Nyan cat 🌈</h1>
     
     <div class="grade-jogos">
         
+        <!-- A TV DE VÍDEOS -->
         <a href="YouTube.html" class="cartao-jogo cartao-tv">
             <div class="icone-jogo">📺</div>
             <h3>Vídeos / TikTok</h3>
         </a>
 
+        <!-- OS JOGOS -->
         <a href="https://scratch.mit.edu/projects/10128407/" target="_blank" class="cartao-jogo"><div class="icone-jogo">⛏️</div><h3>Paper Minecraft</h3></a>
         <a href="https://slither.io/" target="_blank" class="cartao-jogo"><div class="icone-jogo">🐛</div><h3>Slither.io</h3></a>
         <a href="https://shellshock.io/" target="_blank" class="cartao-jogo"><div class="icone-jogo">🥚</div><h3>Shell Shockers</h3></a>
